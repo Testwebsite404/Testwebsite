@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero">
+  <div class="hero-shapes">
+    <div class="shape square"></div>
+    <div class="shape circle"></div>
+    <div class="shape square"></div>
+    <div class="shape circle"></div>
+    <div class="shape square"></div>
+    <div class="shape circle"></div>
+  </div>
+  <div class="hero-content">
+    <h1>Handwerk Meisterbetrieb</h1>
+    <p>Qualität, Präzision und Zuverlässigkeit seit über 15 Jahren.</p>
+    <p>Wir bieten maßgeschneiderte Lösungen für Ihr Zuhause und Ihr Unternehmen.</p>
+  </div>
+</section>
+
+<section class="services">
+  <h2>Unsere Leistungen</h2>
+  <div class="cards">
+    <div class="card">Holzarbeiten & Möbelbau</div>
+    <div class="card">Renovierungen & Innenausbau</div>
+    <div class="card">Reparaturen aller Art</div>
+    <div class="card">Individuelle Raumlösungen</div>
+  </div>
+</section>
+
+<section class="carousel">
+  <div class="carousel-container">
+    <div class="carousel-images">
+      <div class="carousel-slide">
+        <img src="{{ url_for('static', filename='images/image-1.jpg') }}" alt="Image 1">
+      </div>
+      <div class="carousel-slide">
+        <img src="{{ url_for('static', filename='images/image-2.jpg') }}" alt="Image 2">
+      </div>
+      <div class="carousel-slide">
+        <img src="{{ url_for('static', filename='images/image-3.jpg') }}" alt="Image 3">
+      </div>
+      <div class="carousel-slide">
+        <img src="{{ url_for('static', filename='images/image-4.jpg') }}" alt="Image 4">
+      </div>
+      <div class="carousel-slide">
+        <img src="{{ url_for('static', filename='images/image-5.jpg') }}" alt="Image 5">
+      </div>
+    </div>
+  </div>
+
+  <button class="prev-btn">&#10094;</button>
+  <button class="next-btn">&#10095;</button>
+
+  <div class="carousel-dots">
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+</section>
+
+{% endblock %}

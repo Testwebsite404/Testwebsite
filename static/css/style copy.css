@@ -1,0 +1,311 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  background: #1e2a38;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background: #16222a;
+  padding: 15px;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.home-btn {
+  background: #f2c14e;
+  color: #16222a;
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.home-btn:hover {
+  background: #e0b341;
+}
+
+.home-btn.active {
+  box-shadow: 0 0 10px rgba(242, 193, 78, 0.5);
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  padding: 80px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #16222a, #1e2a38);
+}
+
+.hero-shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.shape {
+  position: absolute;
+  background: rgba(242, 193, 78, 0.08);
+  animation: float 18s infinite ease-in-out;
+}
+
+.square {
+  border-radius: 20px;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.shape:nth-child(1) {
+  width: 260px;
+  height: 260px;
+  top: -80px;
+  left: -60px;
+  animation-duration: 20s;
+}
+
+.shape:nth-child(2) {
+  width: 180px;
+  height: 180px;
+  top: 15%;
+  right: -60px;
+  animation-duration: 16s;
+}
+
+.shape:nth-child(3) {
+  width: 140px;
+  height: 140px;
+  bottom: 10%;
+  left: 20%;
+  animation-duration: 14s;
+}
+
+.shape:nth-child(4) {
+  width: 200px;
+  height: 200px;
+  bottom: -60px;
+  right: 15%;
+  animation-duration: 22s;
+}
+
+.shape:nth-child(5) {
+  width: 120px;
+  height: 120px;
+  top: 40%;
+  left: -40px;
+  animation-duration: 17s;
+}
+
+.shape:nth-child(6) {
+  width: 160px;
+  height: 160px;
+  top: 60%;
+  right: -50px;
+  animation-duration: 19s;
+}
+
+/* плавание */
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-40px) rotate(10deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+/* Cards Section */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px 20px;
+}
+
+.card {
+  background: #22303f;
+  padding: 20px;
+  border-radius: 15px;
+  min-width: 250px;
+  max-width: 300px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Footer */
+footer {
+  background: #16222a;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-slide {
+  background: #16222a;
+  color: #fff;
+  padding: 60px 20px;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 0.8s ease-out;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+.footer-block {
+  max-width: 300px;
+}
+
+.footer-block h3 {
+  margin-bottom: 10px;
+  color: #f2c14e;
+}
+
+.footer-block ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-block ul li {
+  margin-bottom: 6px;
+}
+
+/* When scrolling */
+footer.active {
+  opacity: 10;
+  transform: translateY(0);
+}
+
+/* Menu buttons */
+.menu a {
+  background-color: #f2c14e; /* Цвет кнопки */
+  color: #16222a; /* Цвет текста */
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.menu a:hover {
+  background-color: #e0b341; /* Цвет кнопки при наведении */
+  transform: scale(1.05); /* Легкое увеличение кнопки при наведении */
+}
+
+.menu a.active {
+  box-shadow: 0 0 10px rgba(242, 193, 78, 0.5); /* Добавим эффект подсветки для активной кнопки */
+}
+
+/* Основной контейнер слайдера */
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 40px auto;
+  overflow: hidden;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+}
+
+.carousel-images {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+  min-width: 100%;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: auto;
+}
+
+.carousel-dots {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.carousel-dots .dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  border-radius: 50%;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.carousel-dots .dot.active {
+  background-color: #f2c14e;
+}
+
+.prev-btn, .next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 24px;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.prev-btn {
+  left: 10px;
+}
+
+.next-btn {
+  right: 10px;
+}
+
+/* Курсор при наведении на стрелки */
+.prev-btn:hover, .next-btn:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}

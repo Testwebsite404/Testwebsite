@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/handwerk.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+<a href="{{ url_for('index') }}" class="home-btn">🏠 Startseite</a>
+
+<nav class="menu">
+    <a href="{{ url_for('seite1') }}">Leistungen</a>
+    <a href="{{ url_for('seite2') }}">Projekte</a>
+    <a href="{{ url_for('seite3') }}">Über uns</a>
+    <a href="{{ url_for('seite4') }}" class="active">Kontakt</a>
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-shapes">
+  <div class="shape square"></div>
+  <div class="shape circle"></div>
+  <div class="shape square"></div>
+  <div class="shape circle"></div>
+  <div class="shape square"></div>
+  <div class="shape circle"></div>
+</div>
+
+<div class="hero-content">
+
+<div class="contact-container">
+  <div class="contact-text">
+    <h2>Kontakt</h2>
+    <p>📍 Musterstraße 12, 10115 Berlin</p>
+    <p>📞 +49 123 456789</p>
+    <p>✉ info@handwerk-meister.de</p>
+  </div>
+  <iframe class="map" src="https://www.google.com/maps?q=Musterstraße+12+Berlin&output=embed"></iframe>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<footer class="footer-slide">
+  <!-- твой контент footer -->
+</footer>
+
+<script>
+const footer = document.querySelector('.footer-slide');
+window.addEventListener('scroll', () => {
+  const scrollPosition = window.scrollY + window.innerHeight;
+  const footerOffset = footer.offsetTop + 50;
+  if (scrollPosition > footerOffset) {
+    footer.style.opacity = '1';
+    footer.style.transform = 'translateY(0)';
+  }
+});
+</script>
+
+</body>
+</html>

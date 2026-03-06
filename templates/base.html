@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/handwerk.png') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title if title else "Handwerk Meisterbetrieb" }}</title>
+</head>
+<body>
+
+  <header>
+    <a href="{{ url_for('index') }}" class="home-btn">🏠 Startseite</a>
+    <nav class="menu">
+      <a href="{{ url_for('seite1') }}" class="btn {% if request.endpoint == 'seite1' %}active{% endif %}">Leistungen</a>
+      <a href="{{ url_for('seite2') }}" class="btn {% if request.endpoint == 'seite2' %}active{% endif %}">Projekte</a>
+      <a href="{{ url_for('seite3') }}" class="btn {% if request.endpoint == 'seite3' %}active{% endif %}">Über uns</a>
+      <a href="{{ url_for('seite4') }}" class="btn {% if request.endpoint == 'seite4' %}active{% endif %}">Kontakt</a>
+    </nav>
+  </header>
+
+  {% block content %}{% endblock %}
+
+  <footer class="footer-slide">
+    <div class="footer-container">
+      <div class="footer-block">
+        <h3>Kontakt</h3>
+        <ul>
+          <li>📍 Musterstraße 12, Berlin</li>
+          <li>📞 +49 123 456789</li>
+          <li>✉ info@handwerk-meister.de</li>
+        </ul>
+      </div>
+      <div class="footer-block">
+        <h3>Folge uns</h3>
+        <ul>
+          <li>Instagram</li>
+          <li>Facebook</li>
+          <li>Twitter</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const footer = document.querySelector('.footer-slide');
+    window.addEventListener('scroll', () => {
+      const scrollPosition = window.scrollY + window.innerHeight;
+      const footerOffset = footer.offsetTop + 50;
+      if (scrollPosition > footerOffset) {
+        footer.classList.add('active');
+      }
+    });
+  </script>
+
+<script src="{{ url_for('static', filename='js/carousel.js') }}" defer></script>
+
+</body>
+</html>
